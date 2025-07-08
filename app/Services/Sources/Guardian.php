@@ -3,6 +3,7 @@
 namespace App\Services\Sources;
 
 use App\Models\Article;
+use App\Repositories\ArticleRepository;
 use App\Services\ArticleSource;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
@@ -85,7 +86,7 @@ class Guardian extends ArticleSource
         'description' => $article['description'] ?? null,
         'url' => $article['webUrl'],
         'image_url' => $article['urlToImage'] ?? null,
-        'source' => Article::ARTICLE_SOURCE_GUARDIAN,
+        'source' => ArticleRepository::ARTICLE_SOURCE_GUARDIAN,
         'category' => $article['sectionName'] ?? null,
         'published_at' => Carbon::parse($article['webPublicationDate']),
         'author' => $article['author'] ?? null,

@@ -3,6 +3,7 @@
 namespace App\Services\Sources;
 
 use App\Models\Article;
+use App\Repositories\ArticleRepository;
 use App\Services\ArticleSource;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
@@ -93,7 +94,7 @@ class NewsApi extends ArticleSource
           'description' => $article['description'] ?? null,
           'url' => $article['url'],
           'image_url' => $article['urlToImage'] ?? null,
-          'source' => Article::ARTICLE_SOURCE_NEWS_API,
+          'source' => ArticleRepository::ARTICLE_SOURCE_NEWS_API,
           'category' => $category,
           'published_at' => Carbon::parse($article['publishedAt']),
           'author' => $article['author'] ?? null,

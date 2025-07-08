@@ -3,6 +3,7 @@
 namespace App\Services\Sources;
 
 use App\Models\Article;
+use App\Repositories\ArticleRepository;
 use App\Services\ArticleSource;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
@@ -57,7 +58,7 @@ class NewYorkTimes extends ArticleSource
         'description' => $article['snippet'] ?? null,
         'url' => $article['web_url'],
         'image_url' => $article['urlToImage'] ?? null,
-        'source' => Article::ARTICLE_SOURCE_NYT,
+        'source' => ArticleRepository::ARTICLE_SOURCE_NYT,
         'category' => $article['section_name'] ?? null,
         'published_at' => Carbon::parse($article['pub_date']),
         'author' => $article['author'] ?? null,

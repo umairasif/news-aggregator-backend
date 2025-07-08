@@ -11,6 +11,10 @@ use Illuminate\Database\Eloquent\Builder;
 
 class ArticleRepository implements ArticleRepositoryInterface
 {
+  const ARTICLE_SOURCE_NEWS_API = 'NewsApi';
+  const ARTICLE_SOURCE_GUARDIAN = 'Guardian';
+  const ARTICLE_SOURCE_NYT = 'The New York Times';
+
   /**
    * @var Article
    */
